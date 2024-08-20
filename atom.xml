@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>《普通生物学》第四版2.5.2</title>
+  
+  
+  <link href="https://am1noacid.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://am1noacid.github.io/"/>
+  <updated>2024-08-20T15:28:19.247Z</updated>
+  <id>https://am1noacid.github.io/</id>
+  
+  <author>
+    <name>amino</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C6H12O6</title>
+    <link href="https://am1noacid.github.io/2024-08-20-C6H12O6/"/>
+    <id>https://am1noacid.github.io/2024-08-20-C6H12O6/</id>
+    <published>2024-08-20T15:20:58.000Z</published>
+    <updated>2024-08-20T15:28:19.247Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="葡萄糖"><a href="#葡萄糖" class="headerlink" title="葡萄糖"></a>葡萄糖</h1><p>&emsp;&emsp;<font size=5>葡萄糖</font>是<em>易溶于水、有甜味、在自然界分布极广</em>的一种<em>无色</em><font color=#003153>单糖</font>，用途十分广泛。在人体中，葡萄糖能快速补充能量、促进肝脏解毒、加强记忆等。葡萄糖的浓度对生理活动有很大影响。如果浓度过低，可能造成中风或其他的血管疾病；浓度过高会导致肥胖、糖尿病、肾脏病、心脏病及神经损伤等。<br>&nbsp;<br>&emsp;&emsp;在<strong>发酵生产</strong>中，葡萄糖是菌体生长和产物合成的<font color=#66f9cf>主要碳源</font>，其含量直接决定着生产菌增殖、代谢的数量。因此，葡萄糖广泛应用于医药、化工、食品、微生物发酵及皮革等行业。</p><p><img src="/2024-08-20-C6H12O6/test.png" alt="test"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;葡萄糖&quot;&gt;&lt;a href=&quot;#葡萄糖&quot; class=&quot;headerlink&quot; title=&quot;葡萄糖&quot;&gt;&lt;/a&gt;葡萄糖&lt;/h1&gt;&lt;p&gt;&amp;emsp;&amp;emsp;&lt;font size=5&gt;葡萄糖&lt;/font&gt;是&lt;em&gt;易溶于水、有甜味、在自然界分布极广&lt;/em&gt;的一种&lt;</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://am1noacid.github.io/2024-08-19-hello-world/"/>
+    <id>https://am1noacid.github.io/2024-08-19-hello-world/</id>
+    <published>2024-08-18T22:33:16.961Z</published>
+    <updated>2024-08-18T22:33:16.961Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
