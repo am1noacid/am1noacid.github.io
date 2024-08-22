@@ -222,12 +222,15 @@
         </header>
 
         <div class="post-content">
-            <h1 id="BUU-NewStarCTF-2023-Misc"><a href="#BUU-NewStarCTF-2023-Misc" class="headerlink" title="BUU NewStarCTF 2023 Misc"></a>BUU NewStarCTF 2023 Misc</h1><h2 id="WEEK1"><a href="#WEEK1" class="headerlink" title="WEEK1"></a>WEEK1</h2><h3 id="CyberChef’s-Secret"><a href="#CyberChef’s-Secret" class="headerlink" title="CyberChef’s Secret"></a>CyberChef’s Secret</h3><p><em>来签到吧！下面这个就是flag，不过它看起来好像怪怪的:-)</em><br><em>M5YHEUTEKFBW6YJWKZGU44CXIEYUWMLSNJLTOZCXIJTWCZD2IZRVG4TJPBSGGWBWHFMXQTDFJNXDQTA&#x3D;</em><br>BASE32编码，解码得到：<br><em>gprRdQCoa6VMNpWA1K1rjW7dWBgadzFcSrixdcX69YxLeKn8L</em></p>
+            <h1 id="BUU-NewStarCTF-2023-Misc"><a href="#BUU-NewStarCTF-2023-Misc" class="headerlink" title="BUU NewStarCTF 2023 Misc"></a>BUU NewStarCTF 2023 Misc</h1><div align = start>
+
+<h2 id="WEEK1"><a href="#WEEK1" class="headerlink" title="WEEK1"></a>WEEK1</h2><h3 id="CyberChef’s-Secret"><a href="#CyberChef’s-Secret" class="headerlink" title="CyberChef’s Secret"></a>CyberChef’s Secret</h3><p><em>来签到吧！下面这个就是flag，不过它看起来好像怪怪的:-)</em><br><em>M5YHEUTEKFBW6YJWKZGU44CXIEYUWMLSNJLTOZCXIJTWCZD2IZRVG4TJPBSGGWBWHFMXQTDFJNXDQTA&#x3D;</em><br>BASE32编码，解码得到：<br><em>gprRdQCoa6VMNpWA1K1rjW7dWBgadzFcSrixdcX69YxLeKn8L</em></p>
 <p>BASE58编码，解码得到：<br><em>ZmxhZ3tCYXNlXzE1X1MwX0Vhc3lfXl9efQ&#x3D;&#x3D;</em><br>BASE64编码，解码得到：<br><em>flag{Base_15_S0_Easy^^}</em>  </p>
 <h3 id="机密图片"><a href="#机密图片" class="headerlink" title="机密图片"></a>机密图片</h3><p>一张二维码，扫码没有flag，010看不出来问题，考虑LSB隐写。stegsolve打开拿到flag</p>
 <p><img src="/2024-08-22-BUU-NewStarCTF-2023/w1-1.png" alt="w1-1"></p>
 <p><em>flag{W3lc0m3_t0_N3wSt4RCTF_2023_7cda3ece}</em></p>
-<h3 id="流量！鲨鱼！"><a href="#流量！鲨鱼！" class="headerlink" title="流量！鲨鱼！"></a>流量！鲨鱼！</h3><p>wireshark打开，导出HTTP，发现在一堆flag和形似的文件里有一个很可疑的*.ffffllllllll11111144444GGGGGG%7cbase64*文件，用记事本打开，里面是base64编码</p>
+<h3 id="流量！鲨鱼！"><a href="#流量！鲨鱼！" class="headerlink" title="流量！鲨鱼！"></a>流量！鲨鱼！</h3><p>wireshark打开，导出HTTP，发现在一堆flag和形似的文件里有一个很可疑的文件：</p>
+<p> <em>.ffffllllllll11111144444GGGGGG%7cbase64</em> ，用记事本打开，里面是base64编码</p>
 <p><em>Wm14aFozdFhjbWt6TldnMGNtdGZNWE5mZFRVelpuVnNYMkkzTW1FMk1EazFNemRsTm4wSwo&#x3D;</em></p>
 <p>解码两次拿到flag<br><em>flag{Wri35h4rk_1s_u53ful_b72a609537e6}</em></p>
 <h3 id="压缩包们"><a href="#压缩包们" class="headerlink" title="压缩包们"></a>压缩包们</h3><p>010打开，文件头被修改的zip文件，还有base64编码的提示：</p>
@@ -275,7 +278,8 @@
 <h2 id="WEEK3"><a href="#WEEK3" class="headerlink" title="WEEK3"></a>WEEK3</h2><h3 id="阳光开朗大男孩"><a href="#阳光开朗大男孩" class="headerlink" title="阳光开朗大男孩"></a>阳光开朗大男孩</h3><p>flag.txt里是表情，secret.txt里是核心价值观编码</p>
 <p><em>法治自由公正爱国公正敬业法治和谐平等友善敬业法治富强公正民主法治和谐法治和谐法治法治公正友善敬业法治文明公正自由平等诚信平等公正敬业法治和谐平等友善敬业法治和谐和谐富强和谐富强和谐富强平等友善敬业公正爱国和谐自由法治文明公正自由平等友善敬业法治富强和谐自由法治和谐法治和谐法治和谐法治法治和谐富强法治文明公正自由公正自由公正自由公正自由</em></p>
 <p>解码拿到<em>this_password_is_s000_h4rd_p4sssw0rdddd</em></p>
-<p>既然有密码那就不是base100，是emoji-aes，key是<em>s000_h4rd_p4sssw0rdddd</em>，解密得到<em>flag{3m0ji_1s_s0000_1nt3rest1ng_0861aada1050}</em></p>
+<p>既然有密码那就不是base100，是emoji-aes，key是 <em>s000_h4rd_p4sssw0rdddd</em> 。</p>
+<p>解密得到<em>flag{3m0ji_1s_s0000_1nt3rest1ng_0861aada1050}</em></p>
 <h3 id="大怨种"><a href="#大怨种" class="headerlink" title="大怨种"></a>大怨种</h3><p>gif逐帧查看，中间是汉信码，保存不知道为什么变色扫不出来，调成黑白或者直接截图识别</p>
 <p><img src="/2024-08-22-BUU-NewStarCTF-2023/w3-1.png" alt="w3-1"></p>
 <p><em>flag{1_d0nt_k0nw_h0w_to_sc4n_th1s_c0d3_acef808a868e}</em></p>
@@ -357,6 +361,7 @@
 <p>volatility.exe -f C:\Users\amino\Desktop\0\misc\WIN-DOOJTVIN21M-20231005-091206.raw –profile&#x3D;Win7SP1x64 consoles</p>
 <p>查看输入与输出，downloads后面有个4C60-4FE4不知道有没有用，先记下</p>
 <p>装不上mimikatz不做了</p>
+</div>
 
         </div>
 
