@@ -230,11 +230,11 @@
 <h3 id="流量！鲨鱼！"><a href="#流量！鲨鱼！" class="headerlink" title="流量！鲨鱼！"></a>流量！鲨鱼！</h3><p>wireshark打开，导出HTTP，发现在一堆flag和形似的文件里有一个很可疑的*.ffffllllllll11111144444GGGGGG%7cbase64*文件，用记事本打开，里面是base64编码</p>
 <p><em>Wm14aFozdFhjbWt6TldnMGNtdGZNWE5mZFRVelpuVnNYMkkzTW1FMk1EazFNemRsTm4wSwo&#x3D;</em></p>
 <p>解码两次拿到flag<br><em>flag{Wri35h4rk_1s_u53ful_b72a609537e6}</em></p>
-<h3 id="压缩包们"><a href="#压缩包们" class="headerlink" title="压缩包们"></a>压缩包们</h3><p>010打开，头文件被修改的zip文件，还有base64编码的提示：</p>
+<h3 id="压缩包们"><a href="#压缩包们" class="headerlink" title="压缩包们"></a>压缩包们</h3><p>010打开，文件头被修改的zip文件，还有base64编码的提示：</p>
 <p><em>SSBsaWtlIHNpeC1kaWdpdCBudW1iZXJzIGJlY2F1c2UgdGhleSBhcmUgdmVyeSBjb25jaXNlIGFuZCBlYXN5IHRvIHJlbWVtYmVyLg&#x3D;&#x3D;</em></p>
 <p>解码得到</p>
 <p><em>I like six-digit numbers because they are very concise and easy to remember.</em></p>
-<p>头文件改为504B0304，后缀添加.zip，解压一层后内层有加密，但目录区(504B0102)全局方式位标记显示无加密，把00改成09</p>
+<p>文件头改为504B0304，后缀添加.zip，解压一层后内层有加密，但目录区(504B0102)全局方式位标记显示无加密，把00改成09</p>
 <p><img src="/2024-08-22-BUU-NewStarCTF-2023/w1-2.png" alt="w1-2"></p>
 <p>六位数暴力破解，拿到密码232311</p>
 <p><em>flag{y0u_ar3_the_m4ter_of_z1111ppp_606a4adc}</em></p>
