@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="amino">
+
+
+
+
+
+<title>BUUCTF刷题记录 | 《普通生物学》第四版2.5.2</title>
+
+
+
+    <link rel="icon" href="/logo1.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="《普通生物学》第四版2.5.2" type="application/atom+xml">
+</head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">《普通生物学》第四版2.5.2</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">《普通生物学》第四版2.5.2</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">BUUCTF刷题记录</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">amino</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">August 22, 2024&nbsp;&nbsp;9:08:15</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h1 id="Misc"><a href="#Misc" class="headerlink" title="Misc"></a>Misc</h1><p>注意过素质</p>
+<h2 id="被偷走的文件"><a href="#被偷走的文件" class="headerlink" title="被偷走的文件"></a>被偷走的文件</h2><p>wireshark按长度排序，发现NO.55回复了一个对flag.rar的请求，即发送flag.rar。右键追踪TCP流，另存为rar文件</p>
+<p><img src="/2024-08-22-BUUCTF%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/%E8%A2%AB%E5%81%B7%E8%B5%B0%E7%9A%84%E6%96%87%E4%BB%B6.png" alt="img"></p>
+<p>暴力破解，得到密码5790，flag{6fe99a5d03fb01f833ec3caa80358fa3}</p>
+<h2 id="菜刀666"><a href="#菜刀666" class="headerlink" title="菜刀666"></a>菜刀666</h2><p>http流过滤，搜索文本flag，发现有个压缩包，但是需要密码。HTTP流追踪，流7很长一串很可疑，直接读也行看这里也行</p>
+<p><img src="/2024-08-22-BUUCTF%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/%E8%8F%9C%E5%88%80666.png" alt="img"></p>
+<p>FFD8，是jpg格式文件头，导出拿到密码This_1s_p4sswd_!!!</p>
+<p>flag{3OpWdJ-JP6FzK-koCMAK-VkfWBq-75Un2z}</p>
+<h2 id="LSB"><a href="#LSB" class="headerlink" title="LSB"></a>LSB</h2><p>stegsolve-analyse-data extract RGB勾选0 预览结果还是一张PNG图片，save bin为png，扫描二维码。</p>
+<h2 id="爱因斯坦"><a href="#爱因斯坦" class="headerlink" title="爱因斯坦"></a>爱因斯坦</h2><p>010E 图后面有个PK即zip包，拎出来，有加密，图片详细信息的备注写this_is_not_password，这就是压缩包密码。flag{dd22a92bf2cceb6c0cd0d6b83ff51606}</p>
+<h2 id="另外一个世界"><a href="#另外一个世界" class="headerlink" title="另外一个世界"></a>另外一个世界</h2><p>塞进010E发现后面有串二进制，转换出来就是了，koekj3s，短短的也很可爱哦，别不信。</p>
+<h2 id="GXYCTF2019-佛系青年"><a href="#GXYCTF2019-佛系青年" class="headerlink" title="[GXYCTF2019]佛系青年"></a>[GXYCTF2019]佛系青年</h2><p>图片是烟雾弹，压缩包伪加密，进去拿到与佛论禅</p>
+<p>佛曰：遮等諳勝能礙皤藐哆娑梵迦侄羅哆迦梵者梵楞蘇涅侄室實真缽朋能。奢怛俱道怯都諳怖梵尼怯一罰心缽謹缽薩苦奢夢怯帝梵遠朋陀諳陀穆諳所呐知涅侄以薩怯想夷奢醯數羅怯諸</p>
+<p>解码得到flag{w0_fo_ci_Be1}</p>
+<h2 id="数据包中的线索"><a href="#数据包中的线索" class="headerlink" title="数据包中的线索"></a>数据包中的线索</h2><p>wireshark打开发现有巨量的TCP协议，追踪TCP流，里面是很长的base编码，应该是base64，转换得到图片一样的格式，转成图片</p>
+<p><img src="/2024-08-22-BUUCTF%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/%E6%95%B0%E6%8D%AE%E5%8C%85%E4%B8%AD%E7%9A%84%E7%BA%BF%E7%B4%A2.jpg" alt="img"></p>
+<p>识图改错提交flag{209acebf6324a09671abc31c869de72c}</p>
+<h2 id="后门查杀"><a href="#后门查杀" class="headerlink" title="后门查杀"></a>后门查杀</h2><p>这题不会抄的<a target="_blank" rel="noopener" href="https://blog.csdn.net/theenderofroot/article/details/130114521?spm=1001.2101.3001.6661.1&utm_medium=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~Ctr-1-130114521-blog-134125759.235%5Ev43%5Epc_blog_bottom_relevance_base6&depth_1-utm_source=distribute.pc_relevant_t0.none-task-blog-2~default~BlogCommendFromBaidu~Ctr-1-130114521-blog-134125759.235%5Ev43%5Epc_blog_bottom_relevance_base6&utm_relevant_index=1">应急响应-CTF-BUUCTF-后门查杀 1_buuctf 后台查杀-CSDN博客</a></p>
+<p>flag{6ac45fb83b3bc355c024f5034b947dd3}</p>
+<h2 id="面具下的flag"><a href="#面具下的flag" class="headerlink" title="面具下的flag"></a>面具下的flag</h2><p>010发现图片后面有一串压缩包，而且是伪加密，修改目录全局位后解压得到flag.vmdk</p>
+<p>vmdk文件可以用7z解压，得到两个文件夹，part1塞进010发现是BF，解码得到flag{N7F5_AD5</p>
+<p>part2还在010里，巨量的Ook，解码得到_i5_funny!}</p>
+<p>flag{N7F5_AD5_i5_funny!}</p>
+<h2 id="荷兰宽带数据泄露"><a href="#荷兰宽带数据泄露" class="headerlink" title="荷兰宽带数据泄露"></a>荷兰宽带数据泄露</h2><p>conf.bin是路由器配置文件，使用routerpassview查看。flag是username，flag{053700357621}</p>
+<p>查找flag搜索关键词：flag key username password pass pwd pw ctf</p>
+<h2 id="九连环"><a href="#九连环" class="headerlink" title="九连环"></a>九连环</h2><p>jpg里嵌套zip，拎出来解压，得到一个jpg图片和一个有密码的压缩包。</p>
+<p>jpg送给steghide</p>
+<p><img src="/2024-08-22-BUUCTF%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/%E4%B9%9D%E8%BF%9E%E7%8E%AF.png" alt="img"></p>
+<p>文件里就是压缩包密码 bV1g6t5wZDJif^J7</p>
+<p>解压得到flag{1RTo8w@&amp;4nK@z*XL}</p>
+<h2 id="刷新过的图片"><a href="#刷新过的图片" class="headerlink" title="刷新过的图片"></a>刷新过的图片</h2><p>刷新&#x3D;F5 jpg的F5加密 调了他吗八百年的小脚本结果是java版本太新了一直报错，这是我的错吗？装新版本是我的错吗？操你的。output.txt拉进010发现是zip格式，伪加密，解出来flag{96efd0a2037d06f34199e921079778ee}</p>
+<h2 id="snake"><a href="#snake" class="headerlink" title="snake"></a>snake</h2><p>jpg最后藏zip，拉出来，解压得到一个key一个cipher，key的内容是base64，解码：What is Nicki Minaj’s favorite song that refers to snakes?，搜到是anaconda，但是另一个cipher不是python文件，也没办法直接解压，搜索其他加密。</p>
+<p>Serpent 蛇加密</p>
+<p><a target="_blank" rel="noopener" href="http://serpent.online-domain-tools.com/">Serpent Encryption – Easily encrypt or decrypt strings or files</a></p>
+<p>密码就是anaconda，解密flag{who_knew_serpent_cipher_existed}</p>
+<h2 id="一叶障目"><a href="#一叶障目" class="headerlink" title="一叶障目"></a>一叶障目</h2><p>Linux打不开，盲目改宽高图片会变形，得用CRC爆破</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_47875210/article/details/126171502">CRC爆破png图片宽度和高度原理以及python代码_根据crc得出正确高度-CSDN博客</a></p>
+<p>代码抄的这里的↑</p>
+<p>flag{666666}</p>
+<h2 id="梅花香之苦寒来"><a href="#梅花香之苦寒来" class="headerlink" title="梅花香之苦寒来"></a>梅花香之苦寒来</h2><p>010最后面转换成文字是一堆坐标，文件详细信息写要画图，去掉括号粘贴进<strong>FindGraph</strong>，得到二维码，调整比例扫出flag{40fc0a979f759c8892f4dc045e28b820}</p>
+<h2 id="outguess"><a href="#outguess" class="headerlink" title="outguess"></a>outguess</h2><p>010看不到有任何问题，详细信息里核心价值观解码出来是abc，题目提示使用outguess</p>
+<p><img src="/2024-08-22-BUUCTF%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/outguess.png" alt="img"></p>
+<p>flag{gue33_Gu3Ss!2020}</p>
+<h2 id="谁赢得了比赛？"><a href="#谁赢得了比赛？" class="headerlink" title="谁赢得了比赛？"></a>谁赢得了比赛？</h2><p>png后面藏了rar，但是有加密。四位数字暴力破解一下呗又不亏啥！ 密码是1020。得到gif，PS打开看到一帧整体不同，存储为png塞进stegsolve，扫码flag{shanxiajingwu_won_the_game}   gif里也可以分图层以png的形式隐写！</p>
+<h2 id="SWPU2019-我有一只马里奥"><a href="#SWPU2019-我有一只马里奥" class="headerlink" title="[SWPU2019]我有一只马里奥"></a>[SWPU2019]我有一只马里奥</h2><p>根据冒出来的1.txt提示”ntfs flag.txt”，使用了NTFS文件流技术实现的隐写。cmd输入</p>
+<p>notepad 1.txt:flag.txt</p>
+<p>得到flag{ddg_is_cute}</p>
+<h2 id="ACTF新生赛2020-base64隐写"><a href="#ACTF新生赛2020-base64隐写" class="headerlink" title="[ACTF新生赛2020]base64隐写"></a>[ACTF新生赛2020]base64隐写</h2><p>base64隐写脚本打开文件ACTF{6aseb4_f33!}</p>
+<h2 id="GXYCTF2019-gakki"><a href="#GXYCTF2019-gakki" class="headerlink" title="[GXYCTF2019]gakki"></a>[GXYCTF2019]gakki</h2><p>分离rar，硬破，密码8864，拿到txt，大量乱码，<font color = "red">字频统计</font>，得到：{gaki_IsMyw1fe}</p>
+<h2 id="SUCTF2018-single-dog"><a href="#SUCTF2018-single-dog" class="headerlink" title="[SUCTF2018]single dog"></a>[SUCTF2018]single dog</h2><p>分离zip，txt里面是颜文字，叫做AAcode编码，一开始用的网站只会弹一个中文，应该用<a target="_blank" rel="noopener" href="http://www.hiencode.com/aaencode.html">CTF在线工具-在线AAencode编码|AA编码|AAencode解码|AAencode编码原理|AAencode编码算法</a></p>
+<p>flag{happy double eleven}</p>
+<h2 id="HBNIS2018-低个头"><a href="#HBNIS2018-低个头" class="headerlink" title="[HBNIS2018]低个头"></a>[HBNIS2018]低个头</h2><p>键盘隐写</p>
+<p>EWAZX RTY TGB IJN IO KL</p>
+<p>在键盘上的形状是CTF</p>
+<h2 id="SWPU2019-伟大的侦探"><a href="#SWPU2019-伟大的侦探" class="headerlink" title="[SWPU2019]伟大的侦探"></a>[SWPU2019]伟大的侦探</h2><p>txt塞进010节选密码部分误打误撞撞出来ebcbic编码，密码是wllm_is_the_best_team!</p>
+<p>图片是跳舞的小人，按照对照表</p>
+<p><img src="/2024-08-22-BUUCTF%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/%E4%BC%9F%E5%A4%A7%E7%9A%84%E4%BE%A6%E6%8E%A2.png" alt="img"></p>
+<p>iloveholmesandwllm</p>
+<h2 id="MRCTF2020-你能看懂音符吗"><a href="#MRCTF2020-你能看懂音符吗" class="headerlink" title="[MRCTF2020]你能看懂音符吗"></a>[MRCTF2020]你能看懂音符吗</h2><p>010发现文件头Rar!的Ra反了，改回来解压。拿到文档，wps打开，显示段落标记，再格式刷给隐藏的音符刷一下顺利复制，解密得到thEse_n0tes_ArE_am@zing~</p>
+<h2 id="我吃三明治"><a href="#我吃三明治" class="headerlink" title="我吃三明治"></a>我吃三明治</h2><p>jpg里藏了另一个jpg，stegdetective发现它是jphide加密？大概是误报了，两个jpg连接的地方有一串MZWGCZ33GZTDCNZZG5SDIMBYGBRDEOLCGY2GIYJVHA4TONZYGA2DMM3FGMYH2，base32解码flag{6f1797d4080b29b64da5897780463e30}</p>
+<h2 id="SWPU2019-你有没有好好看网课"><a href="#SWPU2019-你有没有好好看网课" class="headerlink" title="[SWPU2019]你有没有好好看网课?"></a>[SWPU2019]你有没有好好看网课?</h2><p>哪里有提示，没有提示啊！flag3暴力破解密码183792，拿到视频</p>
+<p>doc文档提示的意思是从5.20秒和7.11秒开始用显微镜找。。5秒的….. ..&#x2F; … .&#x2F; … .&#x2F; … ..&#x2F; 是敲击码，点的数量是数字，两个数字一组。<a target="_blank" rel="noopener" href="http://www.hiencode.com/tapcode.html">CTF在线工具-在线敲击码|敲击码编码|敲击码算法|tap code</a> &gt; wllm，和7秒的dXBfdXBfdXA&#x3D;&gt; up_up_up组合起来拿到flag2的密码，解压得到jpg，塞进010，{A2e_Y0u_Ok?}</p>
+<h2 id="sqltest"><a href="#sqltest" class="headerlink" title="sqltest"></a><del>sqltest</del></h2><p>很多条select sql盲注，开过滤，导出http对象然后搜索flag</p>
+<p> 在对一个字符进行bool判断时，被重复判断的ASCII值就是正确的字符  </p>
+<p>还是没看懂<a target="_blank" rel="noopener" href="https://blog.csdn.net/SuichI314/article/details/121607047?spm=1001.2101.3001.6650.14&utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-14-121607047-blog-122165346.235%5Ev43%5Epc_blog_bottom_relevance_base6&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromBaidu~Rate-14-121607047-blog-122165346.235%5Ev43%5Epc_blog_bottom_relevance_base6&utm_relevant_index=15">BUUCTF - Web - sqltest_buuctf sqltest-CSDN博客</a>，抄了，过段时间研究web去</p>
+<h2 id="喵喵喵"><a href="#喵喵喵" class="headerlink" title="喵喵喵"></a><del>喵喵喵</del></h2><p>stegsolve看到通道0有东西，BGR顺序看到PNG文件头，但是有冗余信息，删掉。打开是二维码，但只显示一半，改高度。扫描到百度网盘，下载得到rar，里面有txt但flag不在那里，猜测有NTFS流文件,AlternateStreamView扫描文件夹得到flag.pyc。反编译缺少magic number，怎么办？</p>
+<h2 id="间谍启示录"><a href="#间谍启示录" class="headerlink" title="间谍启示录"></a>间谍启示录</h2><p>iso解压，运行1.5次机密文件安装程序，第0.5次准备覆盖时不进行操作看到目录多了个flag.exe，再运行得到Flag{379:7b758:g7dfe7f19:9464f:4g9231}，这谁能想到啊我的天</p>
+<p>可以用</p>
+<p>strings 文件名|grep -i “flag”</p>
+<p>查找所有字符中的flag</p>
+<p>然后用foremost分离文件</p>
+<h2 id="小易的U盘"><a href="#小易的U盘" class="headerlink" title="小易的U盘"></a>小易的U盘</h2><p>解压，autorun.inf打开获得提示副本32，拉进010搜索得到flag{29a0vkrlek3eu10ue89yug9y4r0wdu10}</p>
+<h2 id="RoarCTF2019-黄金6年"><a href="#RoarCTF2019-黄金6年" class="headerlink" title="[RoarCTF2019]黄金6年"></a>[RoarCTF2019]黄金6年</h2><p>视频塞进010，base64解码拿到rar，密码在视频里的二维码</p>
+<p>key1：i key2：want key3：play key4：ctf</p>
+<p>key4在最后面kinovea不显示的部分。。下次换pr吧</p>
+<p>解压拿到{CTF-from-RuMen-to-RuYuan}</p>
+<h2 id="WUSTCTF2020-爬"><a href="#WUSTCTF2020-爬" class="headerlink" title="[WUSTCTF2020]爬"></a>[WUSTCTF2020]爬</h2><p>010打开是pdf，改后缀，进去图片挡住了，wps给了试用于是就这么挪开，下面16进制转换出来{th1s_1s_@_pdf_and_y0u_can_use_phot0sh0p}</p>
+<h2 id="WUSTCTF2020-alison-likes-jojo"><a href="#WUSTCTF2020-alison-likes-jojo" class="headerlink" title="[WUSTCTF2020]alison_likes_jojo"></a>[WUSTCTF2020]alison_likes_jojo</h2><p>图里藏压缩包，6位数硬破，88866，base编码后的killerqueen，都是jpg猜测是outguess，解密拿到{pretty_girl_alison_likes_jojo}</p>
+<h2 id="安洵杯-2019-吹着贝斯扫二维码"><a href="#安洵杯-2019-吹着贝斯扫二维码" class="headerlink" title="[安洵杯 2019]吹着贝斯扫二维码"></a>[安洵杯 2019]吹着贝斯扫二维码</h2><p>010看到都是jpg文件，linux一键重命名加后缀，ps拼图，扫出来BASE Family Bucket ??? </p>
+<p>85-&gt;64-&gt;85-&gt;13-&gt;16-&gt;32。flag.zip的字符串先32，倒着来，base32，hex，rot13，base85，base64，base85，拿到密码ThisIsSecret!233，解压flag{Qr_Is_MeAn1nGfuL}</p>
+<h2 id="弱口令"><a href="#弱口令" class="headerlink" title="弱口令"></a><del>弱口令</del></h2><p>注意bandzip提示区，可能有不可见字符或者空格</p>
+<h2 id="从娃娃抓起"><a href="#从娃娃抓起" class="headerlink" title="从娃娃抓起"></a>从娃娃抓起</h2><p>0086 1562 2535 5174 中文电码：人工智能</p>
+<p><a target="_blank" rel="noopener" href="https://dianma.bmcx.com/">中文电码查询 - 中文电码转换 - 中文电码对照表</a></p>
+<p>bnhn s wwy vffg vffg rrhy fhnv 五笔：也要从娃娃抓起</p>
+<p>md5：flag{3b4b5dccd2c008fe7e2664bd1bc19292}</p>
+<h2 id="zips"><a href="#zips" class="headerlink" title="zips"></a>zips</h2><p>硬破密码723456，剩下抄的[BUUCTF <a target="_blank" rel="noopener" href="https://blog.csdn.net/YueXuan_521/article/details/139100579?ops_request_misc=%7B%22request_id%22:%22172308867416800186528686%22,%22scm%22:%2220140713.130102334.pc_all.%22%7D&request_id=172308867416800186528686&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-20-139100579-null-null.142%5Ev100%5Epc_search_result_base1&utm_term=zips&spm=1018.2226.3001.4187">GUET-CTF2019]zips 1-CSDN博客</a></p>
+<p>伪加密漏看了，该用搜索。flag{fkjabPqnLawhvuikfhgzyffj}</p>
+<h2 id="简单题"><a href="#简单题" class="headerlink" title="简单题"></a>简单题</h2><h3 id="金三胖"><a href="#金三胖" class="headerlink" title="金三胖"></a>金三胖</h3><p>gif拖进PS时间轴逐帧查看即可</p>
+<h3 id="你竟然赶我走-乌镇峰会种图"><a href="#你竟然赶我走-乌镇峰会种图" class="headerlink" title="你竟然赶我走&#x2F;乌镇峰会种图"></a>你竟然赶我走&#x2F;乌镇峰会种图</h3><p>010editor打开拉到最下面就有</p>
+<h3 id="二维码"><a href="#二维码" class="headerlink" title="二维码"></a>二维码</h3><p>QR图片拖进010editor发现IEND结束后还有一个zip压缩包，新建文件，提示4个数字，ARCHPR暴力破解，密码7639，CTF{vjpw_wnoei}</p>
+<h3 id="大白"><a href="#大白" class="headerlink" title="大白"></a>大白</h3><p>010Editor修改图片高度</p>
+<h3 id="文件中的秘密"><a href="#文件中的秘密" class="headerlink" title="文件中的秘密"></a>文件中的秘密</h3><p>属性-详细信息-备注flag{870c5a72806115cb5439345d8b014396}</p>
+<h3 id="zip伪加密"><a href="#zip伪加密" class="headerlink" title="zip伪加密"></a>zip伪加密</h3><p>压缩源文件数据区，头文件标记后2字节的全局方式位标记改为未加密（00 00）</p>
+<p>目录源文件数据区，目录文件头标记后4字节的全局方式位标记改为未加密（00 00）</p>
+<h3 id="镜子里面的世界"><a href="#镜子里面的世界" class="headerlink" title="镜子里面的世界"></a>镜子里面的世界</h3><p>文件名叫steg 提示LSB 勾选0得到st3g0_saurus_wr3cks，删除空格和换行包上flag{}即可</p>
+<h3 id="ningen-小明的保险箱"><a href="#ningen-小明的保险箱" class="headerlink" title="ningen&#x2F;小明的保险箱"></a>ningen&#x2F;小明的保险箱</h3><p>010发现文件结尾有个zip文件，根据提示4位数字密码，archpr暴力破解，密码8368 flag{b025fc9ca797a67d2103bfbc407a6d5f}</p>
+<p>保险箱是rar，步骤同上，口令7869，flag{75a3d68bf071ee188c418ea6cf0bb043}</p>
+<h3 id="FLAG"><a href="#FLAG" class="headerlink" title="FLAG"></a>FLAG</h3><p>图片，010看起来没什么问题，stegsolve检查一下。LSB预览出现PK…，zip压缩包。但是结尾不是504B0506，有巨量的冗余信息。搜索复制粘贴到新文件，包里是个没后缀名的文件，是ELF不过其实不需要打开，拖进010搜索关键词hctf即可。{dd0gf4c3tok3yb0ard4g41n~~~}</p>
+<h3 id="神秘龙卷风"><a href="#神秘龙卷风" class="headerlink" title="神秘龙卷风"></a>神秘龙卷风</h3><p>提示4位数字，暴力破解密码5463，txt文件里是由+.&gt;组成的，去吧brainfuck解释器flag{e4bbef8bdf9743f8bf5b727a9f6332a8}</p>
+<h3 id="来首歌吧"><a href="#来首歌吧" class="headerlink" title="来首歌吧"></a>来首歌吧</h3><p>丢进AU看到中间有小块</p>
+<p>…..&#x2F;-…&#x2F;-.-.&#x2F;—-.&#x2F;..—&#x2F;…..&#x2F;-….&#x2F;….-&#x2F;—-.&#x2F;-.-.&#x2F;-…&#x2F;—–&#x2F;.—-&#x2F;—..&#x2F;—..&#x2F;..-.&#x2F;…..&#x2F;..—&#x2F;.&#x2F;-….&#x2F;.—-&#x2F;–…&#x2F;-..&#x2F;–…&#x2F;—–&#x2F;—-.&#x2F;..—&#x2F;—-.&#x2F;.—-&#x2F;—-.&#x2F;.—-&#x2F;-.-.&#x2F;</p>
+<p>flag{5BC925649CB0188F52E617D70929191C}</p>
+<h3 id="BJDCTF2020-藏藏藏"><a href="#BJDCTF2020-藏藏藏" class="headerlink" title="[BJDCTF2020]藏藏藏"></a>[BJDCTF2020]藏藏藏</h3><p>010后面有zip解压扫码flag{you are the best!}</p>
+<h3 id="秘密文件"><a href="#秘密文件" class="headerlink" title="秘密文件"></a>秘密文件</h3><p>wireshark按文件长度排序看到rar，原始数据存储为压缩包，暴力破解密码是1903，得到flag{d72e5a671aa50fa5f400e5d10eedeaa5}</p>
+<h3 id="wireshark-被嗅探的流量"><a href="#wireshark-被嗅探的流量" class="headerlink" title="wireshark&#x2F;被嗅探的流量"></a>wireshark&#x2F;被嗅探的流量</h3><p>wireshark分组字节流-字符串 查找flag或password（题1的提示：管理员密码）</p>
+<h3 id="被劫持的神秘礼物"><a href="#被劫持的神秘礼物" class="headerlink" title="被劫持的神秘礼物"></a>被劫持的神秘礼物</h3><p>wireshark TCP追踪流得到用户名admina，密码adminb，‘adminaadminb’进行MD5小写hash加密，flag{1d240aafe21a86afc11f38a45b541a49}</p>
+<h3 id="easycap"><a href="#easycap" class="headerlink" title="easycap"></a>easycap</h3><p>wireshark发现全都是TCP协议，分析-追踪流-TCP流 得到FLAG:  385b87afc8671dee07550290d16a8071</p>
+<h3 id="N种方法解决"><a href="#N种方法解决" class="headerlink" title="N种方法解决"></a>N种方法解决</h3><p>010E打开exe文件发现提示jpg与base64，后面的base64转图片，扫描二维码得到flag（或者：exe后缀改txt也可）</p>
+<h3 id="BJDCTF2020-鸡你太美"><a href="#BJDCTF2020-鸡你太美" class="headerlink" title="[BJDCTF2020]鸡你太美"></a>[BJDCTF2020]鸡你太美</h3><p>对比两个文件发现文件头缺失，补齐就行了。flag{zhi_yin_you_are_beautiflu}图片的下划线像连字符，傻之逼捏</p>
+<h3 id="BJDCTF2020-纳尼"><a href="#BJDCTF2020-纳尼" class="headerlink" title="[BJDCTF2020]纳尼"></a>[BJDCTF2020]纳尼</h3><p>补头文件再进ps把图拼一起，识别文字复制解码CTF{wang_bao_qiang_is_sad}，ctf换成flag完事</p>
+<h3 id="假如给我三天光明"><a href="#假如给我三天光明" class="headerlink" title="假如给我三天光明"></a>假如给我三天光明</h3><p>提示应该是盲文 拉丁字母对照顺序如下：</p>
+<p><img src="/2024-08-22-BUUCTF%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/%E5%81%87%E5%A6%82%E7%BB%99%E6%88%91%E4%B8%89%E5%A4%A9%E5%85%89%E6%98%8E.png" alt="假如给我三天光明"></p>
+<p>1 4		第一个（1，3）对应k，第二个（1，3，4）对应m，第三个（1，4，5）对应d</p>
+<p>2 5		第四个（1，3，5）对应o，第五个（1，3，4，5）对应n，第六个（1，3，5）对应o</p>
+<p>3 6		第七个（2，4，5，6）对应w，第八个（1，2，4，5）对应g</p>
+<p>kmdonowg，得到压缩包密码</p>
+<p>另一个zip包塞进010发现其实是rar格式，更改后缀拿到音频</p>
+<p>根据长短：-.-.&#x2F;-&#x2F;..-.&#x2F;.–&#x2F;.–.&#x2F;.&#x2F;..&#x2F;—–&#x2F;—..&#x2F;–…&#x2F;…–&#x2F;..—&#x2F;..–..&#x2F;..—&#x2F;…–&#x2F;-..&#x2F;–..</p>
+<p>转换出来CTFWPEI08732?23DZ</p>
+<p>淡淡的无语，CTF是要去掉变成flag的，剩下的字母是要转换小写的，我真的适合学这个吗</p>
+<h3 id="webshell后门"><a href="#webshell后门" class="headerlink" title="webshell后门"></a>webshell后门</h3><p>这题不会投降D盾了，flag{ba8e6c6f35a53933b871480bb9a9545c} 但是好像标准思路就是D盾，，</p>
+<h3 id="BJDCTF2020-认真你就输了"><a href="#BJDCTF2020-认真你就输了" class="headerlink" title="[BJDCTF2020]认真你就输了"></a>[BJDCTF2020]认真你就输了</h3><p>拖进010发现是zip，改后缀解压找到flag.txt（直接搜就行吧）</p>
+<p>flag{M9eVfi2Pcs# } 这个flag的#和}连在一起害我查了半天hexo报的错，真该死啊</p>
+<h3 id="SWPU2019-神奇的二维码"><a href="#SWPU2019-神奇的二维码" class="headerlink" title="[SWPU2019]神奇的二维码"></a>[SWPU2019]神奇的二维码</h3><p>套中套中套中套最后以手敲摩斯码收尾，我是真的困得没脾气了不然你也上雅座挨骂去。010可以看到png里套压缩包然后再套再套再套，第一个包解压出来的encode.txt文件完全没用就是来玩的，还有个嵌套压缩包应该也没用。第二个包里面doc文档塞了巨长的base 64，解码20层：comEON_YOuAreSOSoS0great 这是第三个包的密码。</p>
+<p>第三个包出来就是mp3文件了，塞进AU</p>
+<p>–&#x2F;—&#x2F;.-.&#x2F;…&#x2F;.&#x2F;..&#x2F;…&#x2F;…-&#x2F;.&#x2F;.-.&#x2F;-.–&#x2F;…-&#x2F;.&#x2F;.-.&#x2F;-.–&#x2F;.&#x2F;.-&#x2F;…&#x2F;-.–</p>
+<p>MORSEISVERYVERYEASY</p>
+<p>最后再大写变小写</p>
+<p>flag{morseisveryveryeasy}</p>
+<h3 id="WUSTCTF2020-find-me"><a href="#WUSTCTF2020-find-me" class="headerlink" title="[WUSTCTF2020]find_me"></a>[WUSTCTF2020]find_me</h3><p>详细信息 里有盲文，转换拿到flag{y$0$u_f$1$n$d$_M$e$e$e$e$e}</p>
+<h3 id="黑客帝国"><a href="#黑客帝国" class="headerlink" title="黑客帝国"></a>黑客帝国</h3><p>txt里的数据塞进010发现是rar，爆破，密码是3690，png拖进010发现是文件头被改成png的jpg，改回去拿到flag{57cd4cfd4e07505b98048ca106132125}</p>
+<h3 id="ACTF新生赛2020-NTFS数据流"><a href="#ACTF新生赛2020-NTFS数据流" class="headerlink" title="[ACTF新生赛2020]NTFS数据流"></a>[ACTF新生赛2020]NTFS数据流</h3><p>解压发现一大堆txt，按照文件大小排序，最上面的是293，里面写flag就在这里。那就cmd notepad 293.txt:flag.txt  ok {AAAds_nntfs_ffunn?} </p>
+<h3 id="UTCTF2020-docx"><a href="#UTCTF2020-docx" class="headerlink" title="[UTCTF2020]docx"></a>[UTCTF2020]docx</h3><p>7z解压docx，在图片里发现flag{unz1p_3v3ryth1ng}</p>
+<h3 id="更简单的"><a href="#更简单的" class="headerlink" title="更简单的"></a>更简单的</h3><p><strong>基础破解</strong> 直接archpr暴力2533，base64 flag{70354300a5100ba78068805661b93a5c}</p>
+<p><strong>rar archpr暴力破解</strong> 密码是8795 flag{1773c5da790bd3caff38e3decd180eb7}</p>
+<p><strong>qr</strong> 扫就行了flag{878865ce73370a4ce607d21ca01b5e59}</p>
+<p><strong>隐藏的钥匙</strong> 010最后面flag提示base64转换得到377cbadda1eca2f2f73d36277781f00a 套上flag即可</p>
+<p><strong>[BJDCTF2020]你猜我是个啥</strong> 不知意义何在的一个题，改了后缀，其实应该是png，但是flag就在010最底下。哦改格式扫码反而没有全部文字，好吧。</p>
+<p><strong>[BJDCTF2020]just_a_rar</strong> 暴力破解密码2016，图片拉进010看到flag{Wadf_123}</p>
+<p><strong>[HBNIS2018]excel破解</strong> 010搜flag就有CTF{office_easy_cracked}，这么简单不应该吧</p>
+<p><strong>来题中等的吧</strong>  .-&#x2F;.-..&#x2F;.–.&#x2F;….&#x2F;.-&#x2F;.-..&#x2F;.-&#x2F;-… flag{alphalab}</p>
+<p><strong>穿越时空的思念</strong> ..-.&#x2F;—–&#x2F;..—&#x2F;—-.&#x2F;-…&#x2F;-..&#x2F;-….&#x2F;..-.&#x2F;…..&#x2F;…..&#x2F;.—-&#x2F;.—-&#x2F;…–&#x2F;—-.&#x2F;.&#x2F;.&#x2F;-..&#x2F;.&#x2F;-…&#x2F;—..&#x2F;.&#x2F;….-&#x2F;…..&#x2F;.-&#x2F;.—-&#x2F;–…&#x2F;…..&#x2F;-…&#x2F;—–&#x2F;–…&#x2F;—..&#x2F;-….&#x2F;   后面是重复..-.&#x2F;—–&#x2F;..—&#x2F;—-.&#x2F;-…&#x2F;-..&#x2F;-….&#x2F;..-.&#x2F;….. flag{f029bd6f551139eedeb8e45a175b0786}</p>
+<p><strong>[GUET-CTF2019]KO</strong> Ook!解密flag{welcome to CTF}</p>
+<p><strong>[MRCTF2020]ezmisc</strong> pngcheck发现宽高被篡改，CRC爆破改回去。MRCTF{1ts_vEryyyyyy_ez!}</p>
+<p><strong>[HBNIS2018]caesar</strong> flagiscaesar</p>
+<p><strong>[GXYCTF2019]SXMgdGhpcyBiYXNlPw&#x3D;&#x3D;</strong> 题目是Is this base? 猜测base64隐写，txt大段果然是，脚本一跑{fazhazhenhaoting}</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/misc/"># misc</a>
+                    
+                        <a href="/tags/CTF/"># CTF</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2024-08-22-BUU-NewStarCTF-2023/">BUU NewStarCTF 2023</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© amino | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
