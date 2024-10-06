@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="amino">
+
+
+
+
+
+<title>Hgame Mini misc | 《普通生物学》第四版2.5.2</title>
+
+
+
+    <link rel="icon" href="/logo1.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="《普通生物学》第四版2.5.2" type="application/atom+xml">
+</head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">《普通生物学》第四版2.5.2</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">《普通生物学》第四版2.5.2</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Hgame Mini misc</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">amino</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">September 5, 2024&nbsp;&nbsp;17:20:46</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="前情提要："><a href="#前情提要：" class="headerlink" title="前情提要："></a>前情提要：</h2><p><font color=#bdbdbd>Boogipop与Natro92互相投屎，本人无辜受伤</font></p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/0-1.png" alt="0-1"></p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/0-2.png" alt="0-2"></p>
+<h2 id="Arhaeology-Flag-1"><a href="#Arhaeology-Flag-1" class="headerlink" title="Arhaeology - Flag 1"></a>Arhaeology - Flag 1</h2><p><img src="/2024-09-05-Hgame-Mini-misc/1-1.png" alt="1-1"></p>
+<p>先看看干了点啥，add flag 然后移除，查看有flag的</p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/1-2.png" alt="1-2"></p>
+<p><em>VIDAR{Welc0me_t0_th3_GIT_W0r1d!!!}</em> 到手</p>
+<h2 id="Archaeology-Flag-2"><a href="#Archaeology-Flag-2" class="headerlink" title="Archaeology - Flag 2"></a>Archaeology - Flag 2</h2><p><img src="/2024-09-05-Hgame-Mini-misc/2-1.png" alt="2-1"></p>
+<p>我寻思还有几个文件没动过，开开试试呗，你咋就爆了</p>
+<p><em>VIDAR{Find_th3_LOST_Tre4sure_1n_h1st0ry}</em></p>
+<h2 id="Welcome-to-Misc-World"><a href="#Welcome-to-Misc-World" class="headerlink" title="Welcome to Misc World!"></a>Welcome to Misc World!</h2><p><img src="/2024-09-05-Hgame-Mini-misc/3-1.png" alt="3-1"></p>
+<p>谢谢出题人的白给</p>
+<p><em>VIDAR{Misc_1s_e4sy_t0_st4rt!!}</em></p>
+<h2 id="Peak"><a href="#Peak" class="headerlink" title="Peak"></a>Peak</h2><p>图片搜索结果是多洛米蒂山脉的刀锋山</p>
+<p><em>VIDAR{Seceda_Mountain_Peak}</em></p>
+<h2 id="Locked-Hell"><a href="#Locked-Hell" class="headerlink" title="Locked Hell"></a>Locked Hell</h2><p>你的意思是我要为了做题下载我的世界是这个意思吗？</p>
+<p>下了顺便开了挂，箱子里两本书，其中一本写着：兔子会告诉你第一段flag</p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/5-1.png" alt="5-1"></p>
+<p>VIDAR{you_re</p>
+<p>另一本书说丢了一段flag在下界，但是现在无法通过传送门，想想办法吧哆啦A梦</p>
+<p>第一次试确实进不去，安了反传送门mod开了作弊就能进了，不知道是哪个起了作用</p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/5-2.png" alt="5-2"></p>
+<p>4ch_th3_nether}</p>
+<p><em>VIDAR{you_re4ch_th3_nether}</em></p>
+<h2 id="Private-Torrent"><a href="#Private-Torrent" class="headerlink" title="Private Torrent"></a>Private Torrent</h2><p><img src="/2024-09-05-Hgame-Mini-misc/6-1.png" alt="6-1"></p>
+<p>这对吗？过几天再看</p>
+<p><del>五天后</del></p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/6-2.png" alt="6-2"></p>
+<p>终于啊！我好感动！</p>
+<p><em>VIDAR{3597fc30-3415-4714-8944-b09753565024}</em></p>
+<h2 id="Weird-suffix"><a href="#Weird-suffix" class="headerlink" title="Weird suffix"></a>Weird suffix</h2><p>拓展名有问题，010看文件头，显而易见part1是png，part2是jpg，part3是bmp</p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/7-1.png" alt="7-1"></p>
+<p>就没了？</p>
+<p><em>VIDAR{FunNy_su4fix}</em></p>
+<h2 id="Hidden-zip"><a href="#Hidden-zip" class="headerlink" title="Hidden zip"></a>Hidden zip</h2><p>原批爬啊！</p>
+<p>jpg最后面有个zip，拉出来解压拿到flag.txt</p>
+<p>VDRWwYufn_e!IA{o~0_idM!}</p>
+<p>根据前几题的格式分两行</p>
+<p>VDRWwYufn _ e!</p>
+<p> IA { o ~ 0_ idM !}</p>
+<p><em>VIDDAR{Wow~Y0u_find_Me!!}</em></p>
+<h2 id="Hard-zip"><a href="#Hard-zip" class="headerlink" title="Hard zip"></a>Hard zip</h2><p>暴力破解密码是password</p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/9-1.png" alt="9-1"></p>
+<p>解压后的图片下面塞着文本形式的16进制，拎出来是zip，解压拿到四片二维码，拼图时间到</p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/9-2.png" alt="9-2"></p>
+<p><em>VIDAR{U^kn0w_QRCode}</em></p>
+<h2 id="ez流量"><a href="#ez流量" class="headerlink" title="ez流量"></a>ez流量</h2><p>USB，键盘流量</p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/10-1.png" alt="10-1"></p>
+<p>0asdghjkl0asdfghjk0sdfghjkl0asdfhjkl0qwertyuop0adfghjkl0zxcbnm0 </p>
+<p>qwertyuop0asfghjkl0sdfghjkl0qwetyuiop0{asdfghkl0qwertyuop0 </p>
+<p>sdfghjkl0zxcvbm0qwertyuio0sdfghjkl0zxcvbm0zcvbnm0qwertyuop0sdfghjkl0}</p>
+<p>把0看作分隔符，可以看到每行都对应键盘一行，缺失的字母就是对应的信息</p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/10-2.png" alt="10-2"></p>
+<p><em>VIDAR{JIANPANXIA}</em></p>
+<p>我猜是大写字母，你呢</p>
+<h2 id="cool-vidar娘"><a href="#cool-vidar娘" class="headerlink" title="cool!!vidar娘"></a>cool!!vidar娘</h2><h2 id="ez取证"><a href="#ez取证" class="headerlink" title="ez取证"></a>ez取证</h2><p>我开了挂，我开了挂！凭本事开挂当然还算好汉</p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/12-1.png" alt="12-1"></p>
+<p>第一段flag <em>W31c0me</em></p>
+<p>volatility查看进程，根据提示熊猫烧香得到对应的应该是spoolsv，再查找含有这个词的文件</p>
+<p><img src="/2024-09-05-Hgame-Mini-misc/12-2.png" alt="12-2"></p>
+<p>是你吗？ <em>0x000000007d823c80</em></p>
+<p>VIDAR{W31c0me_0x000000007d823c80} 是吗？</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/misc/"># misc</a>
+                    
+                        <a href="/tags/CTF/"># CTF</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024-10-06-NewStar2024-week1/">NewStar2024_week1</a>
+            
+            
+            <a class="next" rel="next" href="/2024-08-22-BUUCTF%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/">BUUCTF刷题记录</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© amino | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

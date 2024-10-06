@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="amino">
+
+
+
+
+
+<title>NewStar2024_week1 | 《普通生物学》第四版2.5.2</title>
+
+
+
+    <link rel="icon" href="/logo1.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="《普通生物学》第四版2.5.2" type="application/atom+xml">
+</head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">《普通生物学》第四版2.5.2</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">《普通生物学》第四版2.5.2</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">NewStar2024_week1</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">amino</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">October 6, 2024&nbsp;&nbsp;20:50:09</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h3 id="解出题目"><a href="#解出题目" class="headerlink" title="解出题目"></a>解出题目</h3><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>题目名称</th>
+<th>分数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Misc</td>
+<td>Labyrinth</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Misc</td>
+<td>pleasingMusic</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Misc</td>
+<td>decompress</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Misc</td>
+<td>兑换码</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Misc</td>
+<td>WhereIsFlag</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Crypto</td>
+<td>Base</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Crypto</td>
+<td>Strange King</td>
+<td>69</td>
+</tr>
+<tr>
+<td>Crypto</td>
+<td>xor</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Crypto</td>
+<td>一眼秒了</td>
+<td>59</td>
+</tr>
+<tr>
+<td>Web</td>
+<td>headach3</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Web</td>
+<td>会赢吗</td>
+<td>57</td>
+</tr>
+<tr>
+<td>Web</td>
+<td>智械危机</td>
+<td>73</td>
+</tr>
+<tr>
+<td>Reverse</td>
+<td>begin</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Reverse</td>
+<td>ezAndroidStudy</td>
+<td>79</td>
+</tr>
+<tr>
+<td>Reverse</td>
+<td>base64</td>
+<td>75</td>
+</tr>
+<tr>
+<td>Reverse</td>
+<td>Simple_encryption</td>
+<td>80</td>
+</tr>
+<tr>
+<td>PWN</td>
+<td>Real Login</td>
+<td>68</td>
+</tr>
+</tbody></table>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h3 id="Misc-Labyrinth-50"><a href="#Misc-Labyrinth-50" class="headerlink" title="Misc Labyrinth 50"></a>Misc Labyrinth 50</h3><p>提示LSB，用stegsolve打开点几下看到二维码，扫码得到</p>
+<p><img src="/2024-10-06-NewStar2024-week1/1.png" alt="1"></p>
+<p>flag{e33bb7a1-ac94-4d15-8ff7-fd8c88547b43}</p>
+<h3 id="Misc-pleasingMusic-50"><a href="#Misc-pleasingMusic-50" class="headerlink" title="Misc pleasingMusic 50"></a>Misc pleasingMusic 50</h3><p>AU查看拿到摩斯码</p>
+<p>.&#x2F;..-&#x2F;—&#x2F;.-.-&#x2F;-.–..&#x2F;.&#x2F;…&#x2F;.-.&#x2F;—&#x2F;–&#x2F;-.–..&#x2F;..–&#x2F;. </p>
+<p>题目提示正反，逆序解码得到ez_morse_code，包上flag{ez_morse_code}</p>
+<h3 id="Misc-decompress-50"><a href="#Misc-decompress-50" class="headerlink" title="Misc decompress 50"></a>Misc decompress 50</h3><p>分卷解压即可</p>
+<p><img src="/2024-10-06-NewStar2024-week1/2.png" alt="2"></p>
+<p>按要求md5 flag{c6edaba55bac51875a215e2de11c35dd}</p>
+<h3 id="Misc-兑换码-50"><a href="#Misc-兑换码-50" class="headerlink" title="Misc 兑换码 50"></a>Misc 兑换码 50</h3><p>提示在图片下面，高被改过，010Editor改回来</p>
+<p><img src="/2024-10-06-NewStar2024-week1/3.png" alt="3"></p>
+<p><img src="/2024-10-06-NewStar2024-week1/4.png" alt="4"></p>
+<p>flag{La_vaguelette}</p>
+<h3 id="Misc-WhereIsFlag-50"><a href="#Misc-WhereIsFlag-50" class="headerlink" title="Misc WhereIsFlag 50"></a>Misc WhereIsFlag 50</h3><p>nc连上，ls+cd进每个文件夹看看，发现flag在proc&#x2F;self</p>
+<p><img src="/2024-10-06-NewStar2024-week1/5.png" alt="5"></p>
+<p>flag{e8424b2f-da6d-48cb-a0a6-0ccc47d3eefe}</p>
+<h3 id="Crypto-Base-50"><a href="#Crypto-Base-50" class="headerlink" title="Crypto Base 50"></a>Crypto Base 50</h3><blockquote>
+<p>伟大的Cyber Chef一步到位<a target="_blank" rel="noopener" href="https://ctf.mzy0.com/CyberChef3/">https://ctf.mzy0.com/CyberChef3/</a></p>
+</blockquote>
+<p>base16-32-64逐次解码拿到flag{B@sE_0f_CrYpt0_N0W}</p>
+<h3 id="Crypto-Strange-King-69"><a href="#Crypto-Strange-King-69" class="headerlink" title="Crypto Strange King 69"></a>Crypto Strange King 69</h3><p>f-5 l-7 a-9 g-11 每后一位+2凯撒，位数包括{}</p>
+<p>诚信纯手工</p>
+<p> ksjr{EcxvpdErSvcDgdgEzxqjql}  </p>
+<p>↓</p>
+<p>flag{PleaseDoNotStopLearing}</p>
+<h3 id="Crypto-xor-50"><a href="#Crypto-xor-50" class="headerlink" title="Crypto xor 50"></a>Crypto xor 50</h3><p>key已知，求flag</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> xor</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> bytes_to_long, long_to_bytes</span><br><span class="line"></span><br><span class="line">c1= <span class="number">8091799978721254458294926060841</span></span><br><span class="line">c2= <span class="string">b&#x27;;:\x1c1&lt;\x03&gt;*\x10\x11u;&#x27;</span></span><br><span class="line">key = <span class="string">b&#x27;New_Star_CTF&#x27;</span></span><br><span class="line">m1 = c1 ^ bytes_to_long(key)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;flag1&#x27;</span>,long_to_bytes(m1))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;m2=flag2=&#x27;</span>,xor(c2,key))</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024-10-06-NewStar2024-week1/6.png" alt="6"></p>
+<h3 id="Crypto-一眼秒了-59"><a href="#Crypto-一眼秒了-59" class="headerlink" title="Crypto 一眼秒了 59"></a>Crypto 一眼秒了 59</h3><blockquote>
+<p> 大整数分解小工具 <a target="_blank" rel="noopener" href="http://factordb.com/">http://factordb.com/</a></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line">n = <span class="number">52147017298260357180329101776864095134806848020663558064141648200366079331962132411967917697877875277103045755972006084078559453777291403087575061382674872573336431876500128247133861957730154418461680506403680189755399752882558438393107151815794295272358955300914752523377417192504702798450787430403387076153</span></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">c = <span class="number">48757373363225981717076130816529380470563968650367175499612268073517990636849798038662283440350470812898424299904371831068541394247432423751879457624606194334196130444478878533092854342610288522236409554286954091860638388043037601371807379269588474814290382239910358697485110591812060488786552463208464541069</span></span><br><span class="line">p = <span class="number">7221289171488727827673517139597844534869368289455419695964957239047692699919030405800116133805855968123601433247022090070114331842771417566928809956044421</span></span><br><span class="line">q = <span class="number">7221289171488727827673517139597844534869368289455419695964957239047692699919030405800116133805855968123601433247022090070114331842771417566928809956045093</span></span><br><span class="line">d = <span class="built_in">int</span>(gmpy2.invert(e, (p-<span class="number">1</span>) * (q-<span class="number">1</span>))) </span><br><span class="line">m = <span class="built_in">pow</span>(c, d, n) </span><br><span class="line"><span class="built_in">print</span>(m)</span><br><span class="line"><span class="built_in">print</span>(long_to_bytes(m))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024-10-06-NewStar2024-week1/7.png" alt="7"></p>
+<p>flag{9cd4b35a-affc-422a-9862-58e1cc3ff8d2}</p>
+<h3 id="Web-headach3-50"><a href="#Web-headach3-50" class="headerlink" title="Web headach3 50"></a>Web headach3 50</h3><p>这是头</p>
+<p><img src="/2024-10-06-NewStar2024-week1/8.png" alt="8"></p>
+<p>flag{You_Ar3_R3Ally_A_9ooD_d0ctor}</p>
+<h3 id="Web-会赢吗-57"><a href="#Web-会赢吗-57" class="headerlink" title="Web 会赢吗 57"></a>Web 会赢吗 57</h3><p>F12</p>
+<p><img src="/2024-10-06-NewStar2024-week1/9.png" alt="9"></p>
+<p>ZmxhZ3tXQTB3</p>
+<p>&#x2F;~写上去进入下一步</p>
+<p><img src="/2024-10-06-NewStar2024-week1/10.png" alt="10"></p>
+<p>意思是在控制台上课</p>
+<p><img src="/2024-10-06-NewStar2024-week1/11.png" alt="11"></p>
+<p>IV95NF9yM2Fs</p>
+<p>&#x2F;s341进入下一部分</p>
+<p><img src="/2024-10-06-NewStar2024-week1/12.png" alt="12"></p>
+<p>状态改成解封就能拿到第三部分 MXlfR3I0c1B</p>
+<p>浏览器禁用脚本，使script失效，从而执行no script显示flag</p>
+<p><img src="/2024-10-06-NewStar2024-week1/13.png" alt="13"></p>
+<p>点！！fSkpKcyF9</p>
+<p>解码拿到flag{WA0w!_y4_r3al1y_Gr4sP_JJJs!}</p>
+<h3 id="Web-智械危机-73"><a href="#Web-智械危机-73" class="headerlink" title="Web 智械危机 73"></a>Web 智械危机 73</h3><p>&#x2F;robots.txt</p>
+<p>显示</p>
+<blockquote>
+<p>User-agent: *<br>Disallow: &#x2F;backd0or.php</p>
+</blockquote>
+<p>$cmd：要执行的命令base64编码</p>
+<p>$key：$cmd逆序后md5再base64</p>
+<p>ls没有flag，看上级目录</p>
+<p>cd &#x2F;; ls</p>
+<p>cmd&#x3D;Y2QgLzsgbHM&#x3D;&amp;key&#x3D;OTMwMmI2ZjBlOTFjNDI0MWFlNTMwNTE5YWJjNmZkZjA&#x3D;</p>
+<p><img src="/2024-10-06-NewStar2024-week1/14.png" alt="14"></p>
+<p>有flag了，cd &#x2F;; cat flag打开 </p>
+<p><img src="/2024-10-06-NewStar2024-week1/15.png" alt="15"></p>
+<p>flag{15b79433-2d3a-49a9-8dd5-fff16cc4eee2}  </p>
+<h3 id="Reverse-begin-50"><a href="#Reverse-begin-50" class="headerlink" title="Reverse begin 50"></a>Reverse begin 50</h3><p>part1 flag{Mak3_aN</p>
+<p><img src="/2024-10-06-NewStar2024-week1/16.png" alt="16"></p>
+<p>f5-&gt;双击flag_part1-&gt;点乱码 按a</p>
+<p>part2 3Ff0rt_tO_5eArcH_</p>
+<p><img src="/2024-10-06-NewStar2024-week1/17.png" alt="17"></p>
+<p>shift+f12</p>
+<p><img src="/2024-10-06-NewStar2024-week1/18.png" alt="18"></p>
+<p>part3 F0r_th3_f14g_C0Rpse</p>
+<h3 id="Reverse-ezAndroidStudy-79"><a href="#Reverse-ezAndroidStudy-79" class="headerlink" title="Reverse ezAndroidStudy 79"></a>Reverse ezAndroidStudy 79</h3><p>根据题目要求走就行</p>
+<p>flag1: flag{Y0u</p>
+<p><img src="/2024-10-06-NewStar2024-week1/19.png" alt="19"></p>
+<p>flag2: _@r4</p>
+<p><img src="/2024-10-06-NewStar2024-week1/20.png" alt="20"></p>
+<p>flag3: _900d</p>
+<p><img src="/2024-10-06-NewStar2024-week1/21.png" alt="21"></p>
+<p>flag4: _andr01d</p>
+<p><img src="/2024-10-06-NewStar2024-week1/22.png" alt="22"></p>
+<p>flag5: _r4V4rs4r}</p>
+<p><img src="/2024-10-06-NewStar2024-week1/23.png" alt="23"></p>
+<h3 id="Reverse-base64-75"><a href="#Reverse-base64-75" class="headerlink" title="Reverse base64 75"></a>Reverse base64 75</h3><p><img src="/2024-10-06-NewStar2024-week1/24.png" alt="24"></p>
+<p>换表的base64和表</p>
+<p><img src="/2024-10-06-NewStar2024-week1/25.png" alt="25"></p>
+<p>flag{y0u_kn0w_base64_well}</p>
+<p>谢谢你无敌的CyberChef</p>
+<h3 id="Reverse-Simple-encryption-80"><a href="#Reverse-Simple-encryption-80" class="headerlink" title="Reverse Simple_encryption 80"></a>Reverse Simple_encryption 80</h3><p>要求输入一串flag，从第一位开始循环计算16进制</p>
+<p>1：值减31</p>
+<p>2：值加41</p>
+<p>3：与0x55异或</p>
+<p>将这样编码后的字符串与buffer字符串逐个比较并输出当前编码后字符，即总比正确值多一位，不对则输出error</p>
+<p>buffer的值在这里</p>
+<p>47h, 95h, 34h, 48h, 0A4h, 1Ch, 35h, 88h, 64h, 16h, 88h,7, 14h, 6Ah, 39h, 12h, 0A2h, 0Ah, 37h, 5Ch, 7, 5Ah,56h, 60h, 12h, 76h, 25h, 12h, 8Eh, 28h, 2</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">buffer = [</span><br><span class="line">    <span class="number">0x47</span>, <span class="number">0x95</span>, <span class="number">0x34</span>, <span class="number">0x48</span>, <span class="number">0xA4</span>, <span class="number">0x1C</span>,</span><br><span class="line">    <span class="number">0x35</span>, <span class="number">0x88</span>, <span class="number">0x64</span>, <span class="number">0x16</span>, <span class="number">0x88</span>, <span class="number">0x07</span>,</span><br><span class="line">    <span class="number">0x14</span>, <span class="number">0x6A</span>, <span class="number">0x39</span>, <span class="number">0x12</span>, <span class="number">0xA2</span>, <span class="number">0x0A</span>,</span><br><span class="line">    <span class="number">0x37</span>, <span class="number">0x5C</span>, <span class="number">0x07</span>, <span class="number">0x5A</span>, <span class="number">0x56</span>, <span class="number">0x60</span>,</span><br><span class="line">    <span class="number">0x12</span>, <span class="number">0x76</span>, <span class="number">0x25</span>, <span class="number">0x12</span>, <span class="number">0x8E</span>, <span class="number">0x28</span>, <span class="number">0x02</span></span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">result = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i, value <span class="keyword">in</span> <span class="built_in">enumerate</span>(buffer):</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">3</span> == <span class="number">0</span>:  <span class="comment"># 第一位</span></span><br><span class="line">        result.append(value + <span class="number">31</span>)</span><br><span class="line">    <span class="keyword">elif</span> i % <span class="number">3</span> == <span class="number">1</span>:  <span class="comment"># 第二位</span></span><br><span class="line">        result.append(value - <span class="number">41</span>)</span><br><span class="line">    <span class="keyword">elif</span> i % <span class="number">3</span> == <span class="number">2</span>:  <span class="comment"># 第三位</span></span><br><span class="line">        result.append(value ^ <span class="number">0x55</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> new <span class="keyword">in</span> result:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">chr</span>(new),end = <span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024-10-06-NewStar2024-week1/27.png" alt="27"></p>
+<p>flag{IT_15_R3Al1y_V3Ry-51Mp1e}</p>
+<h3 id="PWN-Real-Login-68"><a href="#PWN-Real-Login-68" class="headerlink" title="PWN Real Login 68"></a>PWN Real Login 68</h3><p><img src="/2024-10-06-NewStar2024-week1/28.png" alt="28"></p>
+<p>知道密码后输入，回到系统</p>
+<p><img src="/2024-10-06-NewStar2024-week1/29.png" alt="29"></p>
+<p><img src="/2024-10-06-NewStar2024-week1/30.png" alt="30"></p>
+<p>flag{c0f98df3-f5af-4dda-b130-3aae6916d5c9}</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/CTF/"># CTF</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2024-10-07-NewStar2024-week2/">NewStar2024_week2</a>
+            
+            
+            <a class="next" rel="next" href="/2024-09-05-Hgame-Mini-misc/">Hgame Mini misc</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© amino | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

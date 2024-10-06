@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="amino">
+
+
+
+
+
+<title>NewStar2024_week2 | 《普通生物学》第四版2.5.2</title>
+
+
+
+    <link rel="icon" href="/logo1.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="《普通生物学》第四版2.5.2" type="application/atom+xml">
+</head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">《普通生物学》第四版2.5.2</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">《普通生物学》第四版2.5.2</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/archives">Posts</a>
+                
+                    <a class="menu-item" href="/category">Categories</a>
+                
+                    <a class="menu-item" href="/tag">Tags</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">NewStar2024_week2</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">amino</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">October 7, 2024&nbsp;&nbsp;1:45:38</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="解出题目"><a href="#解出题目" class="headerlink" title="解出题目"></a>解出题目</h2><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>题⽬名称</th>
+<th>分数</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Misc</td>
+<td>热心助人的小明同学</td>
+<td>140</td>
+</tr>
+<tr>
+<td>Misc</td>
+<td>Herta’s Study</td>
+<td>123</td>
+</tr>
+<tr>
+<td>Misc</td>
+<td>字里行间的秘密</td>
+<td>64</td>
+</tr>
+<tr>
+<td>Misc</td>
+<td>wireshark_secret</td>
+<td>57</td>
+</tr>
+<tr>
+<td>Misc</td>
+<td>用溯流仪见证伏特台风</td>
+<td>58</td>
+</tr>
+<tr>
+<td>Misc</td>
+<td>wireshark_checkin</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Misc</td>
+<td>你也玩原神吗</td>
+<td>65</td>
+</tr>
+<tr>
+<td>Crypto</td>
+<td>Since you konw something</td>
+<td>98</td>
+</tr>
+<tr>
+<td>Crypto</td>
+<td>这是几次方？疑惑！</td>
+<td>102</td>
+</tr>
+<tr>
+<td>Crypto</td>
+<td>Just one and more than two</td>
+<td>99</td>
+</tr>
+<tr>
+<td>Signin</td>
+<td>ez_answer</td>
+<td>50</td>
+</tr>
+</tbody></table>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><h3 id="Misc-热心助人的小明同学-140"><a href="#Misc-热心助人的小明同学-140" class="headerlink" title="Misc   热心助人的小明同学   140"></a>Misc   热心助人的小明同学   140</h3><p><img src="/2024-10-07-NewStar2024-week2/1.png" alt="1"></p>
+<p>flag{ZDFyVDlfdTNlUl9wNHNTdzByRF9IQUNLRVIh}</p>
+<p>或者</p>
+<p><img src="/2024-10-07-NewStar2024-week2/2.png" alt="2"></p>
+<h3 id="Misc-Herta’s-Study-123"><a href="#Misc-Herta’s-Study-123" class="headerlink" title="Misc  Herta’s Study  123"></a>Misc  Herta’s Study  123</h3><p><img src="/2024-10-07-NewStar2024-week2/3.png" alt="3"></p>
+<p>dHJfcm90MTMoJG5zWyRpXSk7DQo</p>
+<p>gICAgfQ0KfQ0KcmV0dXJuICRuczs&#x3D;&#x3D;</p>
+<p>rot13得到qUWspz90ZGZbWT5mJlEcKFx7QDbtVPNtsD0XsD0XpzI0qKWhVPEhpmf&#x3D;&#x3D;</p>
+<p>base64解码其余全部</p>
+<p>$ns&#x3D;base64_encode($ns);</p>
+<p>for($i&#x3D;0;$i&lt;strlen($ns);$i+&#x3D;1){</p>
+<p>​    if($i%2&#x3D;&#x3D;1){</p>
+<p>​        $ns[$i]&#x3D;str_rot13($ns[$i]);</p>
+<p>​    }</p>
+<p>}</p>
+<p>return $ns;</p>
+<p>偶数位rot13后整体base64</p>
+<p><img src="/2024-10-07-NewStar2024-week2/4.png" alt="4"></p>
+<p>1: fake{this_is_fake_falg}</p>
+<p>base64:ZmFrZXt0aGlzX2lzX2Zha2VfZmFsZ30&#x3D;</p>
+<p>偶数：mrX0alXlXZaVZFZ0</p>
+<p>ROT13:zeK0nyKyKMnIMSM0</p>
+<p>payload&#x3D;type%20f.txt</p>
+<p>ZzxuZ3tmSQNsaGRsUmBsNzVOdKQkZaVZLa0tCt&#x3D;&#x3D;</p>
+<p>偶数：zu3mQsGsmszOKkaZatt&#x3D;</p>
+<p>奇数：ZxZtSNaRUBNVdQZVL0C&#x3D;</p>
+<p>ROT13：mh3zDfTfzfmBXxnMngg&#x3D;</p>
+<p>插入：ZmxhZ3tzSDNfaTRfUzBfNmVBdXQxZnVMLn0gCg&#x3D;&#x3D;</p>
+<p>base64解码：flag{sH3_i4_S0_6eAut1fuL.}</p>
+<h3 id="Misc-字里行间的秘密-64"><a href="#Misc-字里行间的秘密-64" class="headerlink" title="Misc  字里行间的秘密  64"></a>Misc  字里行间的秘密  64</h3><p>txt打开全选</p>
+<p>零宽字符隐写<a target="_blank" rel="noopener" href="https://www.mzy0.com/ctftools/zerowidth1/">https://www.mzy0.com/ctftools/zerowidth1/</a></p>
+<p><img src="/2024-10-07-NewStar2024-week2/5.png" alt="5"></p>
+<p>docx的密码是it_is_k3y</p>
+<p><img src="/2024-10-07-NewStar2024-week2/6.png" alt="6"></p>
+<p>改颜色显示拿到flag</p>
+<p>flag{you_h4ve_4nyth1n9}</p>
+<h3 id="Misc-wireshark-secret-57"><a href="#Misc-wireshark-secret-57" class="headerlink" title="Misc  wireshark_secret  57"></a>Misc  wireshark_secret  57</h3><p><img src="/2024-10-07-NewStar2024-week2/7.png" alt="7"></p>
+<p>导出分组字节流保存为png</p>
+<p>png长这样<img src="/2024-10-07-NewStar2024-week2/8.png" alt="8"></p>
+<h3 id="Misc-用溯流仪见证伏特台风-58"><a href="#Misc-用溯流仪见证伏特台风-58" class="headerlink" title="Misc  用溯流仪见证伏特台风  58"></a>Misc  用溯流仪见证伏特台风  58</h3><p>直接搜清晰图片然后QQ截图识别文字</p>
+<p><img src="/2024-10-07-NewStar2024-week2/9.png" alt="9"></p>
+<p>powerj7kmpzkdhjg4szvcxxgktgk36ezpjxvtosylrpey7svpmrjyuyd.onion</p>
+<p>人工把exxg改成cxxg，md5，包上flag{}</p>
+<p>flag{6c3ea51b6f9d4f5e}</p>
+<h3 id="Misc-wireshark-checkin-50"><a href="#Misc-wireshark-checkin-50" class="headerlink" title="Misc  wireshark_checkin  50"></a>Misc  wireshark_checkin  50</h3><p><img src="/2024-10-07-NewStar2024-week2/10.png" alt="10"></p>
+<p>flag{ez_traffic_analyze_isn’t_it}</p>
+<h3 id="Misc-你也玩原神吗-65"><a href="#Misc-你也玩原神吗-65" class="headerlink" title="Misc  你也玩原神吗  65"></a>Misc  你也玩原神吗  65</h3><p>原批爬</p>
+<p><img src="/2024-10-07-NewStar2024-week2/11.png" alt="11"></p>
+<p>中间的是LOREM IPZUM，无意义乱数假文开头，看四角 </p>
+<p>中间最后 QUIZ</p>
+<p>左上FLAGISASENTENCE</p>
+<p>右上IIAAELGTSFKFA</p>
+<p>左下DOYOUKNOWFENCE</p>
+<p>右下MESIOAABGNHNSGOGMYEIADE</p>
+<p>提示栅栏，右上分两栏</p>
+<p>IIAAELG</p>
+<p>TSFKFA</p>
+<p>itisafakeflag</p>
+<p><img src="/2024-10-07-NewStar2024-week2/12.png" alt="12"></p>
+<p>右下maybegenshinisagoodgame</p>
+<h3 id="Crypto-Since-you-konw-something-98"><a href="#Crypto-Since-you-konw-something-98" class="headerlink" title="Crypto  Since you konw something  98"></a>Crypto  Since you konw something  98</h3><p>两位key穷举</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> xor</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line">c=<span class="number">218950457292639210021937048771508243745941011391746420225459726647571</span></span><br><span class="line">key = <span class="string">b&#x27;New_Star_CTF&#x27;</span></span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">256</span>):</span><br><span class="line">	<span class="keyword">for</span> b <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">256</span>):</span><br><span class="line">		key = <span class="built_in">chr</span>(a) + <span class="built_in">chr</span>(b)</span><br><span class="line">		FLAG = xor(long_to_bytes(c),key).decode(<span class="string">&#x27;UTF-8&#x27;</span>,<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line">		<span class="keyword">if</span> FLAG[:<span class="number">4</span>] == <span class="string">&#x27;flag&#x27;</span>:</span><br><span class="line">			<span class="built_in">print</span>(<span class="string">&#x27;FLAG=&#x27;</span>,FLAG)</span><br><span class="line">			<span class="built_in">print</span>(key)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>FLAG&#x3D; flag{Y0u_kn0w_th3_X0r_b3tt3r}</p>
+<p>key：ns</p>
+<p><img src="/2024-10-07-NewStar2024-week2/13.png" alt="13"></p>
+<h3 id="Crypto-这是几次方？疑惑！-102"><a href="#Crypto-这是几次方？疑惑！-102" class="headerlink" title="Crypto  这是几次方？疑惑！  102"></a>Crypto  这是几次方？疑惑！  102</h3><p>python中+的优先级比^高，所以hint &#x3D; p ^ (e + 10086)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line">n = <span class="number">124455847177872829086850368685666872009698526875425204001499218854100257535484730033567552600005229013042351828575037023159889870271253559515001300645102569745482135768148755333759957370341658601268473878114399708702841974488367343570414404038862892863275173656133199924484523427712604601606674219929087411261</span></span><br><span class="line">e = <span class="number">65537</span></span><br><span class="line">c = <span class="number">36513006092776816463005807690891878445084897511693065366878424579653926750135820835708001956534802873403195178517427725389634058598049226914694122804888321427912070308432512908833529417531492965615348806470164107231108504308584954154513331333004804817854315094324454847081460199485733298227480134551273155762</span></span><br><span class="line">hint = <span class="number">12578819356802034679792891975754306960297043516674290901441811200649679289740456805726985390445432800908006773857670255951581884098015799603908242531673390</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#计算pq</span></span><br><span class="line">p = hint^<span class="number">10086</span> + e</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;p=&#x27;</span>,p)</span><br><span class="line">q = n // p</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;q=&#x27;</span>,q)</span><br><span class="line"><span class="comment">#计算私钥</span></span><br><span class="line">d = <span class="built_in">int</span>(gmpy2.invert(e, (p-<span class="number">1</span>) * (q-<span class="number">1</span>)))</span><br><span class="line">m = <span class="built_in">pow</span>(c, d, n) <span class="comment">#解密</span></span><br><span class="line"><span class="built_in">print</span>(m)</span><br><span class="line"><span class="built_in">print</span>(long_to_bytes(m))</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024-10-07-NewStar2024-week2/14.png" alt="14"></p>
+<p>flag{yihuo_yuan_lai_xian_ji_suan_liang_bian_de2333}</p>
+<h3 id="Crypto-Just-one-and-more-than-two-99"><a href="#Crypto-Just-one-and-more-than-two-99" class="headerlink" title="Crypto  Just one and more than two  99"></a>Crypto  Just one and more than two  99</h3><p>多一步rsa</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> Crypto.Util.number <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"></span><br><span class="line">e=<span class="number">65537</span></span><br><span class="line"></span><br><span class="line">p=<span class="number">11867061353246233251584761575576071264056514705066766922825303434965272105673287382545586304271607224747442087588050625742380204503331976589883604074235133</span></span><br><span class="line">q=<span class="number">11873178589368883675890917699819207736397010385081364225879431054112944129299850257938753554259645705535337054802699202512825107090843889676443867510412393</span></span><br><span class="line">r=<span class="number">12897499208983423232868869100223973634537663127759671894357936868650239679942565058234189535395732577137079689110541612150759420022709417457551292448732371</span></span><br><span class="line">c1=<span class="number">8705739659634329013157482960027934795454950884941966136315983526808527784650002967954059125075894300750418062742140200130188545338806355927273170470295451</span></span><br><span class="line">c2=<span class="number">1004454248332792626131205259568148422136121342421144637194771487691844257449866491626726822289975189661332527496380578001514976911349965774838476334431923162269315555654716024616432373992288127966016197043606785386738961886826177232627159894038652924267065612922880048963182518107479487219900530746076603182269336917003411508524223257315597473638623530380492690984112891827897831400759409394315311767776323920195436460284244090970865474530727893555217020636612445</span></span><br><span class="line"></span><br><span class="line">N = p*q*r</span><br><span class="line"></span><br><span class="line">d = <span class="built_in">int</span>(gmpy2.invert(e, (p-<span class="number">1</span>) * (q-<span class="number">1</span>) * (r-<span class="number">1</span>)))</span><br><span class="line">m1 = long_to_bytes(<span class="built_in">pow</span>(c1,d,p))</span><br><span class="line">m2 = long_to_bytes(<span class="built_in">pow</span>(c2,d,N))</span><br><span class="line"><span class="built_in">print</span>(m1 + m2)</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024-10-07-NewStar2024-week2/15.png" alt="15"></p>
+<p>flag{Y0u_re4lly_kn0w_Euler_4nd_N3xt_Eu1er_is_Y0u!}</p>
+<h3 id="Signin-ez-answer-50"><a href="#Signin-ez-answer-50" class="headerlink" title="Signin  ez_answer  50"></a>Signin  ez_answer  50</h3><p>flag{I_Agr3e_to_FoL10w_th3_ru1es_5138fb6a}</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/CTF/"># CTF</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+            
+            <a class="next" rel="next" href="/2024-10-06-NewStar2024-week1/">NewStar2024_week1</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© amino | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
